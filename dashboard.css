@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Search Bar Styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    outline: none;
+    width: 220px;
+    transition: 0.3s ease-in-out;
+}
+
+.search-container input::placeholder {
+    color: #bbb;
+}
+
+/* Input focus effect */
+.search-container input:focus {
+    border-color: #ffa500;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+/* Search Button Styling */
+.search-container button {
+    padding: 10px 15px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.search-container button:hover {
+    background: #ffa500;
+    transform: scale(1.05);
+}
+
+.search-container button:active {
+    background: #e69500;
+    transform: scale(0.98);
+}
+
+
+/* Weather Parameters */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.parameter {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.parameter h3 {
+    color: #ffcc00;
+}
+
+.parameter p {
+    font-size: 1.5rem;
+}
+
+/* Map */
+.map-heading {
+    margin-top: 20px;
+    color: #ffcc00;
+}
+
+#map {
+    height: 400px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}

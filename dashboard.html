@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">STRIVERS</div>
+        <ul class="nav-links">
+            <li><a href="#">Air Quality</a></li>
+            <li><a href="#">Water Quality</a></li>
+            <li><a href="#">Weather</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter city name">
+            <button onclick="fetchWeather()">Search</button>
+        </div>
+    </nav>
+
+    <!-- Weather Parameters Section -->
+    <div class="container" id="weatherContainer">
+        <div class="parameter"><h3>Temperature</h3><p id="temperature">--</p></div>
+        <div class="parameter"><h3>Humidity</h3><p id="humidity">--</p></div>
+        <div class="parameter"><h3>Wind Speed</h3><p id="windSpeed">--</p></div>
+        <div class="parameter"><h3>Condition</h3><p id="condition">--</p></div>
+    </div>
+
+    <!-- Map Section -->
+    <h2 class="map-heading">Location</h2>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/dashboard.js"></script>
+
+</body>
+</html>
