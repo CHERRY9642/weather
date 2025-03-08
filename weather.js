@@ -49,6 +49,7 @@ async function fetchWeather(city, lat = null, lon = null) {
 
             console.log("Geocoding Response:", geoData);
 
+            // Check if the city is found
             if (!geoData || geoData.length === 0) {
                 alert("City not found! Please enter a valid city.");
                 return;
@@ -56,6 +57,7 @@ async function fetchWeather(city, lat = null, lon = null) {
 
             lat = geoData[0].lat;
             lon = geoData[0].lon;
+            city = geoData[0].name; // Use the correctly formatted city name
         }
 
         console.log(`Fetching weather for ${city} at (${lat}, ${lon})`);
@@ -66,8 +68,9 @@ async function fetchWeather(city, lat = null, lon = null) {
 
         console.log("Weather Data:", weatherData);
 
+        // Check if weather data is available
         if (weatherData.cod !== 200) {
-            alert("Error fetching weather data.");
+            alert("Weather data not available for this location.");
             return;
         }
 
@@ -156,5 +159,7 @@ document.querySelector(".search-container button").addEventListener("click", fun
     const cityInput = document.getElementById("searchInput").value.trim();
     if (cityInput) {
         fetchWeather(cityInput);
+    } else {
+        alert("Please enter a city name!");
     }
 });
