@@ -26,7 +26,7 @@ async function fetchWeatherByCoords(lat, lon) {
         const reverseGeoResponse = await fetch(reverseGeoUrl);
         const reverseGeoData = await reverseGeoResponse.json();
 
-        if (!reverseGeoData || reverseGeoData.length === 0) {
+        if (!reverseGeoData || reverseGeoData.length === 0 || !reverseGeoData[0].name) {
             alert("Unable to detect city!");
             return;
         }
@@ -49,9 +49,9 @@ async function fetchWeather(city, lat = null, lon = null) {
 
             console.log("Geocoding Response:", geoData);
 
-            // Check if the city is found
-            if (!geoData || geoData.length === 0) {
-                alert("City not found! Please enter a valid city.");
+            // Validate city data before fetching weather
+            if (!geoData || geoData.length === 0 || !geoData[0].lat || !geoData[0].lon) {
+                alert("City not found! Please enter a valid city name.");
                 return;
             }
 
