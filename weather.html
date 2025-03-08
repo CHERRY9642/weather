@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/weather.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">STRIVERS</div>
+        <ul class="nav-links">
+            <li><a href="/airquality.html">Air Quality</a></li>
+            <li><a href="#">Water Quality</a></li>
+            <li><a href="weather.html">Weather</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter city name">
+            <button onclick="fetchWeather()">Search</button>
+        </div>
+    </nav>
+
+    <!-- Weather Parameters Section -->
+    <div class="container" id="weatherContainer">
+        <div class="parameter"><h3>Temperature</h3><p id="temperature">--</p></div>
+        <div class="parameter"><h3>Feels Like</h3><p id="feelsLike">--</p></div>
+        <div class="parameter"><h3>Humidity</h3><p id="humidity">--</p></div>
+        <div class="parameter"><h3>Pressure</h3><p id="pressure">--</p></div>
+        <div class="parameter"><h3>Wind Speed</h3><p id="windSpeed">--</p></div>
+        <div class="parameter"><h3>Visibility</h3><p id="visibility">--</p></div>
+        <div class="parameter"><h3>Condition</h3><p id="condition">--</p></div>
+        <div class="parameter"><h3>Sunrise</h3><p id="sunrise">--</p></div>
+        <div class="parameter"><h3>Sunset</h3><p id="sunset">--</p></div>
+        <div class="parameter"><h3>UV Index</h3><p id="uvIndex">--</p></div>
+    </div>
+
+    <!-- 5-Day Forecast Section -->
+    <h2 class="forecast-heading">5-Day Weather Forecast</h2>
+    <div class="forecast-container" id="forecastContainer">
+        <!-- Forecast data will be dynamically added here -->
+    </div>
+
+    <!-- Map Section -->
+    <h2 class="map-heading">Location</h2>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/weather.js"></script>
+
+</body>
+</html>

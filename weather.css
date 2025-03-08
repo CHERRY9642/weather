@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Search Bar Styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    width: 220px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.parameter {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.parameter h3 {
+    color: #ffcc00;
+}
+
+.parameter p {
+    font-size: 1.5rem;
+}
+
+#map {
+    height: 400px;
+    width: 80%;
+    margin: 20px auto;
+}
+.forecast-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.forecast-card {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+}

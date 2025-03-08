@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality & Temperature</title>
+    <link rel="stylesheet" href="/airquality.css">
+    <script src="/airquality.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">STRIVERS</div>
+        <ul class="nav-links">
+            <li><a href="#">Air Quality</a></li>
+            <li><a href="#">Water Quality</a></li>
+            <li><a href="weather.html">Weather</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter city name">
+            <button onclick="fetchWeather()">Search</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 id="cityName">Enter a city to check air quality</h2>
+
+        <!-- Air Quality Data Containers -->
+        <div class="pollution-container">
+            <div class="pollution-box">
+                <i class="fas fa-smog"></i>
+                <p>CO (Carbon Monoxide)</p>
+                <span id="co">-- ppm</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-burn"></i>
+                <p>NO (Nitric Oxide)</p>
+                <span id="no">-- ppm</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-industry"></i>
+                <p>NO2 (Nitrogen Dioxide)</p>
+                <span id="no2">-- ppm</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-radiation"></i>
+                <p>O3 (Ozone)</p>
+                <span id="o3">-- ppm</span>
+            </div>
+        </div>
+
+        <div class="pollution-container">
+            <div class="pollution-box">
+                <i class="fas fa-wind"></i>
+                <p>SO2 (Sulfur Dioxide)</p>
+                <span id="so2">-- ppm</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-cloud"></i>
+                <p>PM2.5 (Fine Particles)</p>
+                <span id="pm2_5">-- µg/m³</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-dust"></i>
+                <p>PM10 (Coarse Particles)</p>
+                <span id="pm10">-- µg/m³</span>
+            </div>
+            <div class="pollution-box">
+                <i class="fas fa-vial"></i>
+                <p>NH3 (Ammonia)</p>
+                <span id="nh3">-- ppm</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Temperature Map Section -->
+    <div class="map-container">
+        <h2>Temperature Map (2m Height)</h2>
+        <div id="temperatureMap"></div>
+    </div>
+
+</body>
+</html>
