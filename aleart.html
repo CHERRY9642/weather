@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alerts</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-container input {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ffcc00;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+            width: 220px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            background: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .alert {
+            background: #ffcc00;
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">STRIVERS</div>
+        <ul class="nav-links">
+            <li><a href="airquality.html">Air Quality</a></li>
+            <li><a href="#">Pollution</a></li>
+            <li><a href="weather.html">Weather</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter city name">
+            <button onclick="fetchWeatherAlerts()">Search</button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h2>Weather Alerts</h2>
+        <div id="alerts">
+            <div class="alert">⚠️ Heavy Rainfall Expected - Stay Indoors</div>
+            <div class="alert">⚠️ Strong Winds Advisory - Secure Loose Objects</div>
+            <div class="alert">⚠️ High UV Index - Wear Sunscreen</div>
+            <div class="alert">⚠️ Thunderstorm Warning - Avoid Open Areas</div>
+        </div>
+    </div>
+    
+    <script>
+        async function fetchWeatherAlerts() {
+            const apiKey = "YOUR_API_KEY";
+            const city = document.getElementById("searchInput").value || "YOUR_CITY";
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const alertsContainer = document.getElementById("alerts");
+                alertsContainer.innerHTML = "";
+                
+                if (data.weather) {
+                    data.weather.forEach(alert => {
+                        const alertDiv = document.createElement("div");
+                        alertDiv.className = "alert";
+                        alertDiv.textContent = `⚠️ ${alert.main}: ${alert.description}`;
+                        alertsContainer.appendChild(alertDiv);
+                    });
+                } else {
+                    alertsContainer.innerHTML = "<p>No alerts at the moment.</p>";
+                }
+            } catch (error) {
+                console.error("Error fetching weather data:", error);
+            }
+        }
+    </script>
+</body>
+</html>
