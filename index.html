@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +7,28 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- Left Side: Get Started Section -->
-    <div class="content">
-        <h1>Feel the Storm Before the Rain!</h1>
-        <p>Stay ahead of the weather with accurate forecasts, real-time alerts, and insightful climate trends.</p>
-        <ul class="features-list">
-            <li>🌍 Live Weather Updates</li>
-            <li>⏳ Hourly & Weekly Forecasts</li>
-            <li>⚠️ Severe Weather Alerts</li>
-            <li>📍 Location-Based Predictions</li>
-            <li>📊 Interactive Weather Maps</li>
-        </ul>
-        <a href="weather.html" class="get-started-btn">Get Started</a>
-    </div>
-    
+    <div class="container">
+        <!-- Main Content -->
+        <div class="content">
+            <h1 class="fade-in-up">Feel the Storm Before the Rain!</h1>
+            <p class="fade-in-up">Stay ahead of the weather with accurate forecasts, real-time alerts, and insightful climate trends.</p>
+            <a href="weather.html" class="get-started-btn fade-in-up">Get Started</a>
+        </div>
 
-    <!-- Cloud Container -->
+        <!-- Features Section -->
+        <div class="features-container">
+            <h2 class="fade-in-right">Key Features</h2>
+            <ul class="features-list">
+                <li class="feature-item">🌍 Live Weather Updates</li>
+                <li class="feature-item">⏳ Hourly & Weekly Forecasts</li>
+                <li class="feature-item">⚠️ Severe Weather Alerts</li>
+                <li class="feature-item">📍 Location-Based Predictions</li>
+                <li class="feature-item">📊 Interactive Weather Maps</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cloud Animation -->
     <div class="cloud-container">
         <img src="cloud.png" class="cloud cloud1" alt="Cloud">
         <img src="cloud.png" class="cloud cloud2" alt="Cloud">
@@ -32,11 +37,6 @@
 
     <!-- Lightning Effect -->
     <div class="lightning"></div>
-
-    <!-- Right Side: Earth GIF -->
-    <div class="gif-container">
-        <img src="earth.gif" alt="Rotating Earth">
-    </div>
 
     <script src="index.js"></script>
 </body>

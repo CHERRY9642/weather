@@ -1,19 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const clouds = document.querySelectorAll(".cloud");
-    const lightning = document.querySelector(".lightning");
+document.addEventListener("DOMContentLoaded", () => {
+    // Lightning Effect
+    function createLightning() {
+        const lightning = document.createElement("div");
+        lightning.classList.add("lightning");
+        document.body.appendChild(lightning);
 
-    clouds.forEach((cloud, index) => {
-        let speed = 25 + index * 5; // Different speeds for realism
-        cloud.style.animationDuration = `${speed}s`;
-    });
-
-    // Lightning effect randomness
-    function triggerLightning() {
-        lightning.style.animation = "none"; // Reset animation
         setTimeout(() => {
-            lightning.style.animation = "lightningStrike 6s infinite";
-        }, Math.random() * 5000 + 3000); // Random interval between 3s to 5s
+            lightning.remove();
+        }, 300);
     }
 
-    setInterval(triggerLightning, 7000);
+    setInterval(() => {
+        if (Math.random() > 0.8) {
+            createLightning();
+        }
+    }, 2000);
 });
